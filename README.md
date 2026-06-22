@@ -52,6 +52,13 @@ LOKI_URL=http://127.0.0.1:3100 node dist/index.js
 The server caps query limits and lookback windows. It returns compact records
 with labels, timestamp, and line content instead of raw Loki responses.
 
+## Dependency Updates
+
+Dependency updates are managed by Dependabot through `.github/dependabot.yml`.
+Dependabot opens weekly grouped PRs for npm and GitHub Actions updates. These
+PRs are never auto-merged; review and run the normal verification path before
+merge.
+
 ## License
 
 MIT
