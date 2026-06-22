@@ -59,6 +59,11 @@ Dependabot opens weekly grouped PRs for npm and GitHub Actions updates. These
 PRs are never auto-merged; review and run the normal verification path before
 merge.
 
+## Releases
+
+Releases use semantic versioning with `vMAJOR.MINOR.PATCH` tags. Release notes
+are tracked in `CHANGELOG.md`. Package publishing is not enabled.
+
 ## License
 
 MIT
