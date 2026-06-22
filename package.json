@@ -1,0 +1,31 @@
+{
+  "name": "tiny-loki-mcp",
+  "version": "0.1.0",
+  "description": "A tiny read-only MCP server for Grafana Loki.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "tiny-loki-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "npm run build && node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

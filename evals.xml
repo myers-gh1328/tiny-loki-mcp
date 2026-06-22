@@ -1,0 +1,42 @@
+<evals>
+  <eval id="1">
+    <question>List the available Loki labels, then list values for the host label.</question>
+    <expected>Call loki_labels, then call loki_label_values with label=host.</expected>
+  </eval>
+  <eval id="2">
+    <question>Find recent logs for host example-host from the last 30 minutes.</question>
+    <expected>Call loki_recent with host=example-host and since=30m.</expected>
+  </eval>
+  <eval id="3">
+    <question>Check whether service web has emitted errors in the last hour.</question>
+    <expected>Call loki_query with a bounded LogQL query for service web and an error filter.</expected>
+  </eval>
+  <eval id="4">
+    <question>Show the services currently present in Loki.</question>
+    <expected>Call loki_label_values with label=service.</expected>
+  </eval>
+  <eval id="5">
+    <question>Get the most recent 20 logs for host example-host and service worker.</question>
+    <expected>Call loki_recent with host=example-host, service=worker, limit=20.</expected>
+  </eval>
+  <eval id="6">
+    <question>A query asks for 10000 results. What should happen?</question>
+    <expected>The server should cap the request to its configured max limit.</expected>
+  </eval>
+  <eval id="7">
+    <question>A query asks for logs from 30 days ago. What should happen?</question>
+    <expected>The server should reject or cap the lookback to its configured maximum.</expected>
+  </eval>
+  <eval id="8">
+    <question>Investigate whether a host has any logs: first discover hosts, then query one host.</question>
+    <expected>Call loki_label_values for host, then loki_recent for a selected host.</expected>
+  </eval>
+  <eval id="9">
+    <question>Use raw LogQL to search for timeout messages in recent logs.</question>
+    <expected>Call loki_query with a bounded query containing a timeout text filter.</expected>
+  </eval>
+  <eval id="10">
+    <question>The Loki server is unreachable. What should the tool report?</question>
+    <expected>Return a human-readable connection or timeout error with the Loki URL context.</expected>
+  </eval>
+</evals>
